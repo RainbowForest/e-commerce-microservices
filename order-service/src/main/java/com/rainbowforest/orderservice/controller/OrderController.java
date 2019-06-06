@@ -26,7 +26,7 @@ public class OrderController {
     @Autowired
     private CartService cartService;
 
-    @GetMapping(value = "/order/{userId}")
+    @PostMapping(value = "/order/{userId}")
     private ResponseEntity saveOrder(@PathVariable("userId") Long userId, @RequestHeader(value = "Cookie") String cartId){
         Order order = new Order();
         List<Item> cart = cartService.getAllItemsFromCart(cartId);

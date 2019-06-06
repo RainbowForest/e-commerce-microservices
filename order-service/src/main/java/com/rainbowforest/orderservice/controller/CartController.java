@@ -20,7 +20,7 @@ public class CartController {
         return new ResponseEntity<List<Object>>(cart, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/cart", params = {"productId", "quantity"})
+    @PostMapping(value = "/cart", params = {"productId", "quantity"})
     private ResponseEntity addItemToCart(
             @RequestParam("productId") Long productId,
             @RequestParam("quantity") Integer quantity,
@@ -38,7 +38,7 @@ public class CartController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/cart", params = "productId")
+    @DeleteMapping(value = "/cart", params = "productId")
     private ResponseEntity removeItemFromCart(
             @RequestParam("productId") Long productId,
             @RequestHeader(value = "Cookie") String cartId){
