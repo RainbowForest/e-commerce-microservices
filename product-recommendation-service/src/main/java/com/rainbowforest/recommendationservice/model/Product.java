@@ -7,7 +7,6 @@ import java.util.List;
 
 @Entity
 @Table (name = "products")
-@NoArgsConstructor
 public class Product {
 
     @Id
@@ -19,6 +18,10 @@ public class Product {
     @OneToMany (mappedBy = "product")
     @JsonIgnore
     private List<Recommendation> recomendations;
+    
+    public Product() {
+    	
+    }
 
     public Product(String productName, List<Recommendation> recomendations) {
         this.productName = productName;

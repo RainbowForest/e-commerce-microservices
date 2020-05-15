@@ -20,7 +20,7 @@ public class RegisterController {
     private UserService userService;
 
     @PostMapping(value = "/registration")
-    private ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws URISyntaxException {
+    public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws URISyntaxException {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(new URI(request.getRequestURI() + "/" + user.getId()));
         userService.saveUser(user);

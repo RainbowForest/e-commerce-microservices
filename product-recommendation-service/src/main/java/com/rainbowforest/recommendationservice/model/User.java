@@ -7,7 +7,6 @@ import java.util.List;
 
 @Entity
 @Table (name = "users")
-@NoArgsConstructor
 public class User {
 
     @Id
@@ -19,6 +18,10 @@ public class User {
     @OneToMany (mappedBy = "user")
     @JsonIgnore
     private List<Recommendation> recomendations;
+    
+    public User() {
+    	
+    }
 
     public User(String userName, List<Recommendation> recomendations) {
         this.userName = userName;

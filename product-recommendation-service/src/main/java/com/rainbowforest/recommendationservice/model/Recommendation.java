@@ -5,7 +5,6 @@ import javax.persistence.*;
 
 @Entity
 @Table (name = "recommendation")
-@NoArgsConstructor
 public class Recommendation {
 
     @Id
@@ -22,8 +21,12 @@ public class Recommendation {
     @ManyToOne (cascade = CascadeType.ALL)
     @JoinColumn (name = "user_id")
     private User user;
+    
+    public Recommendation() {
+	
+	}
 
-    public Recommendation(int rating, Product product, User user) {
+	public Recommendation(int rating, Product product, User user) {
         this.rating = rating;
         this.product = product;
         this.user = user;

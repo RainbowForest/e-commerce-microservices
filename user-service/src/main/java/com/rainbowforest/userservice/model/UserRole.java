@@ -7,7 +7,6 @@ import java.util.List;
 
 @Entity
 @Table (name = "user_role")
-@Data
 public class UserRole {
 
     @Id
@@ -20,4 +19,31 @@ public class UserRole {
     @OneToMany (mappedBy = "role")
     @JsonIgnore
     private List<User> users;
+
+	public UserRole() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getRoleName() {
+		return roleName;
+	}
+
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
+	}
+
+	public List<User> getUsers() {
+		return users;
+	}
+
+	public void setUsers(List<User> users) {
+		this.users = users;
+	}
 }

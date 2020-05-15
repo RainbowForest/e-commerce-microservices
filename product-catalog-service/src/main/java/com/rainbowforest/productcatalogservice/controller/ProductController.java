@@ -13,22 +13,22 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping (value = "/products")
-    private List<Product> getAllProducts(){
+    public List<Product> getAllProducts(){
         return productService.getAllProduct();
     }
 
     @GetMapping(value = "/products", params = "category")
-    private List<Product> getAllProductByCategory(@RequestParam ("category") String category){
+    public List<Product> getAllProductByCategory(@RequestParam ("category") String category){
         return productService.getAllProductByCategory(category);
     }
 
     @GetMapping (value = "/products/{id}")
-    private Product getOneProductById(@PathVariable ("id") long id){
+    public Product getOneProductById(@PathVariable ("id") long id){
         return productService.getOneById(id);
     }
 
     @GetMapping (value = "/products", params = "name")
-    private List<Product> getAllProductsByName(@RequestParam ("name") String name){
+    public List<Product> getAllProductsByName(@RequestParam ("name") String name){
         return productService.getAllProductsByName(name);
     }
 }

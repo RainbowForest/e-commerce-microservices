@@ -19,22 +19,22 @@ public class UserController {
     private UserService userService;
 
     @GetMapping (value = "/users")
-    private List<User> getAllUsers(){
+    public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
 
     @GetMapping (value = "/users", params = "name")
-    private User getUserByName(@RequestParam("name") String userName){
+    public User getUserByName(@RequestParam("name") String userName){
         return userService.getUserByName(userName);
     }
 
     @GetMapping (value = "/users/{id}")
-    private User getUserById(@PathVariable("id") Long id){
+    public User getUserById(@PathVariable("id") Long id){
         return userService.getUserById(id);
     }
 
     @PostMapping (value = "/users")
-    private ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws URISyntaxException {
+    public ResponseEntity<User> addUser(@RequestBody User user, HttpServletRequest request) throws URISyntaxException {
         HttpHeaders headers = new HttpHeaders();
         headers.setLocation(new URI(request.getRequestURI() + "/" + user.getId()));
         userService.saveUser(user);

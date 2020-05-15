@@ -1,12 +1,10 @@
 package com.rainbowforest.userservice.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
 import javax.persistence.*;
 
 @Entity
 @Table (name = "users_details")
-@Data
 public class UserDetails {
 
     @Id
@@ -33,6 +31,97 @@ public class UserDetails {
     private String country;
 
     @OneToOne(mappedBy = "userDetails")
-    @JsonIgnore
+	@JsonIgnore 
     private User user;
+
+	public UserDetails() {
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getStreetNumber() {
+		return streetNumber;
+	}
+
+	public void setStreetNumber(String streetNumber) {
+		this.streetNumber = streetNumber;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getLocality() {
+		return locality;
+	}
+
+	public void setLocality(String locality) {
+		this.locality = locality;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
 }
