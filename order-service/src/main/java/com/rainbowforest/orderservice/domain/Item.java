@@ -11,7 +11,7 @@ import java.util.List;
 @Table (name = "items")
 @EqualsAndHashCode
 public class Item {
-
+	
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     @JsonIgnore
