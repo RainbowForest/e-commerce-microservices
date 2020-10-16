@@ -56,13 +56,13 @@ public class RecommendationServiceTests {
 
     @Test
     public void get_all_recommendation_by_product_name_test(){
-        // Data preparation
+        //given
         when(repository.findAllRatingByProductName(anyString())).thenReturn(recommendations);
 
-        //Method call
+        //when
         List<Recommendation> foundRecommendations = recommendationService.getAllRecommendationByProductName(PRODUCT_NAME);
 
-        //Verification
+        //then
         assertEquals(foundRecommendations.get(0).getId(), RECOMMENDATION_ID);
         assertEquals(foundRecommendations.get(0).getProduct().getProductName(), PRODUCT_NAME);
         assertEquals(foundRecommendations.get(0).getUser().getUserName(), USER_NAME);
@@ -72,18 +72,17 @@ public class RecommendationServiceTests {
 
     @Test
     public void save_recommendation_test(){
-        // Data preparation
+        //given
         when(repository.save(any(Recommendation.class))).thenReturn(recommendation);
 
-        //Method call
+        //when
         Recommendation found = recommendationService.saveRecommendation(recommendation);
 
-        //Verification
+        //then
         assertEquals(found.getId(), RECOMMENDATION_ID);
         assertEquals(found.getProduct().getProductName(), PRODUCT_NAME);
         assertEquals(found.getUser().getUserName(), USER_NAME);
         Mockito.verify(repository, Mockito.times(1)).save(any(Recommendation.class));
         Mockito.verifyNoMoreInteractions(repository);
-
     }
 }

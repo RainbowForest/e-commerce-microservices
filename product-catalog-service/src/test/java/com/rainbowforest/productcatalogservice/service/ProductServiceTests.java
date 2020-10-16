@@ -1,6 +1,6 @@
 package com.rainbowforest.productcatalogservice.service;
 
-import com.rainbowforest.productcatalogservice.model.Product;
+import com.rainbowforest.productcatalogservice.entity.Product;
 import com.rainbowforest.productcatalogservice.repository.ProductRepository;
 import org.junit.Before;
 import org.junit.*;
@@ -66,7 +66,7 @@ public class ProductServiceTests {
         Mockito.when(productRepository.getOne(PRODUCT_ID)).thenReturn(product);
 
         // Method call
-        Product found = productService.getOneById(PRODUCT_ID);
+        Product found = productService.getProductById(PRODUCT_ID);
 
         // Verification
         assertEquals(found.getId(), PRODUCT_ID);

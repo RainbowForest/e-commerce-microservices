@@ -1,7 +1,6 @@
 package com.rainbowforest.userservice.service;
 
-
-import com.rainbowforest.userservice.model.User;
+import com.rainbowforest.userservice.entity.User;
 import com.rainbowforest.userservice.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,12 +10,9 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNull;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.when;
 
@@ -46,13 +42,13 @@ public class UserServiceTests {
 
     @Test
     public void get_all_users_test(){
-        // Data preparation
+        // given
         when(userRepository.findAll()).thenReturn(userList);
 
-        // Method call
+        // when
         List<User> foundUsers = userService.getAllUsers();
 
-        // Verification
+        // then
         assertEquals(foundUsers.get(0).getUserName(), USER_NAME);
         Mockito.verify(userRepository, Mockito.times(1)).findAll();
         Mockito.verifyNoMoreInteractions(userRepository);
@@ -60,13 +56,13 @@ public class UserServiceTests {
 
     @Test
     public void get_user_by_id_test(){
-        // Data preparation
+        // given
         when(userRepository.getOne(anyLong())).thenReturn(user);
 
-        // Method call
+        // when
         User foundUser = userService.getUserById(USER_ID);
 
-        // Verification
+        // then
         assertEquals(foundUser.getUserName(), USER_NAME);
         Mockito.verify(userRepository, Mockito.times(1)).getOne(anyLong());
         Mockito.verifyNoMoreInteractions(userRepository);
@@ -74,13 +70,13 @@ public class UserServiceTests {
 
     @Test
     public void get_user_by_name_test(){
-        // Data preparation
+        // given
         when(userRepository.findByUserName(anyString())).thenReturn(user);
 
-        // Method call
+        // when
         User foundUser = userService.getUserByName(USER_NAME);
 
-        // Verification
+        // then
         assertEquals(foundUser.getId(), USER_ID);
         Mockito.verify(userRepository, Mockito.times(1)).findByUserName(USER_NAME);
         Mockito.verifyNoMoreInteractions(userRepository);

@@ -1,7 +1,7 @@
 package com.rainbowforest.orderservice.service;
 
 
-import com.rainbowforest.orderservice.model.Order;
+import com.rainbowforest.orderservice.domain.Order;
 import com.rainbowforest.orderservice.repository.OrderRepository;
 import org.junit.Before;
 import org.junit.Test;
