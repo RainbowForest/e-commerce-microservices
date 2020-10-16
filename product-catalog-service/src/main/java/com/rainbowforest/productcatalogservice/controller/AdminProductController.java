@@ -39,7 +39,7 @@ public class AdminProductController {
     			headerGenerator.getHeadersForError(),
     			HttpStatus.BAD_REQUEST);       
     }
-
+    
     @DeleteMapping(value = "/products/{id}")
     private ResponseEntity<Void> deleteProduct(@PathVariable("id") Long id){
     	Product product = productService.getProductById(id);
