@@ -1,7 +1,7 @@
 package com.rainbowforest.userservice.service;
 
-import com.rainbowforest.userservice.model.User;
-import com.rainbowforest.userservice.model.UserRole;
+import com.rainbowforest.userservice.entity.User;
+import com.rainbowforest.userservice.entity.UserRole;
 import com.rainbowforest.userservice.repository.UserRepository;
 import com.rainbowforest.userservice.repository.UserRoleRepository;
 import org.springframework.beans.factory.annotation.Autowired;

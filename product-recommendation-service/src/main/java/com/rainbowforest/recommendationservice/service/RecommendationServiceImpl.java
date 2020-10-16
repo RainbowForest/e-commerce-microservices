@@ -26,4 +26,9 @@ public class RecommendationServiceImpl implements RecommendationService {
     public void deleteRecommendation(Long id) {
         recommendationRepository.deleteById(id);
     }
+
+	@Override
+	public Recommendation getRecommendationById(Long recommendationId) {
+		return recommendationRepository.getOne(recommendationId);
+	}
 }

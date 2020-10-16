@@ -1,4 +1,4 @@
-package com.rainbowforest.userservice.model;
+package com.rainbowforest.userservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -13,9 +13,9 @@ public class User {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "user_name")
+    @Column (name = "user_name", nullable = false, unique = true, length = 50)
     private String userName;
-    @Column (name = "user_password")
+    @Column (name = "user_password", nullable = false, length = 50)
     private String userPassword;
     @Column (name = "active")
     private int active;

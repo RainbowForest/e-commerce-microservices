@@ -1,4 +1,4 @@
-package com.rainbowforest.orderservice.model;
+package com.rainbowforest.orderservice.domain;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

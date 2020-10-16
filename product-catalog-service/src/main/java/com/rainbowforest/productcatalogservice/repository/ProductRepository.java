@@ -1,8 +1,10 @@
 package com.rainbowforest.productcatalogservice.repository;
 
-import com.rainbowforest.productcatalogservice.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import com.rainbowforest.productcatalogservice.entity.Product;
+
 import java.util.List;
 
 @Repository

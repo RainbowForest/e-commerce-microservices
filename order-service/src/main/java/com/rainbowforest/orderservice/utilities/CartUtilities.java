@@ -1,7 +1,8 @@
 package com.rainbowforest.orderservice.utilities;
 
-import com.rainbowforest.orderservice.model.Product;
 import java.math.BigDecimal;
+
+import com.rainbowforest.orderservice.domain.Product;
 
 public class CartUtilities {
 

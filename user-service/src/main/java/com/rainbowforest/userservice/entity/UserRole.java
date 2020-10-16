@@ -1,4 +1,4 @@
-package com.rainbowforest.userservice.model;
+package com.rainbowforest.userservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;

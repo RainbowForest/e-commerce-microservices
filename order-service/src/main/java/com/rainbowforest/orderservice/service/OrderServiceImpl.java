@@ -1,6 +1,6 @@
 package com.rainbowforest.orderservice.service;
 
-import com.rainbowforest.orderservice.model.Order;
+import com.rainbowforest.orderservice.domain.Order;
 import com.rainbowforest.orderservice.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

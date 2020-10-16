@@ -1,6 +1,6 @@
 package com.rainbowforest.productcatalogservice.service;
 
-import com.rainbowforest.productcatalogservice.model.Product;
+import com.rainbowforest.productcatalogservice.entity.Product;
 import com.rainbowforest.productcatalogservice.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,7 +25,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getOneById(Long id) {
+    public Product getProductById(Long id) {
         return productRepository.getOne(id);
     }
 

@@ -1,4 +1,4 @@
-package com.rainbowforest.orderservice.model;
+package com.rainbowforest.orderservice.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;

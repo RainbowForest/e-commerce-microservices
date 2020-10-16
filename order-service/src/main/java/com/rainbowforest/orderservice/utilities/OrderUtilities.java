@@ -1,8 +1,9 @@
 package com.rainbowforest.orderservice.utilities;
 
-import com.rainbowforest.orderservice.model.Item;
 import java.math.BigDecimal;
 import java.util.List;
+
+import com.rainbowforest.orderservice.domain.Item;
 
 public class OrderUtilities {
 

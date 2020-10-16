@@ -1,11 +1,12 @@
 package com.rainbowforest.userservice.service;
 
-import com.rainbowforest.userservice.model.User;
 import java.util.List;
 
+import com.rainbowforest.userservice.entity.User;
+
 public interface UserService {
-    public List<User> getAllUsers();
-    public User getUserById(Long id);
-    public User getUserByName(String userName);
-    public User saveUser(User user);
+    List<User> getAllUsers();
+    User getUserById(Long id);
+    User getUserByName(String userName);
+    User saveUser(User user);
 }
