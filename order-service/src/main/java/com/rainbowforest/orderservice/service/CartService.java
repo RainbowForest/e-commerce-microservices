@@ -1,7 +1,8 @@
 package com.rainbowforest.orderservice.service;
 
-import com.rainbowforest.orderservice.model.Item;
 import java.util.List;
+
+import com.rainbowforest.orderservice.domain.Item;
 
 public interface CartService {
 
