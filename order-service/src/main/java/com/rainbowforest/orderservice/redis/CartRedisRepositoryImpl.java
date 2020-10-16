@@ -4,15 +4,13 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Data;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import redis.clients.jedis.Jedis;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 
-@Component
-@Data
+@Repository
 public class CartRedisRepositoryImpl implements CartRedisRepository{
 
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -23,7 +21,6 @@ public class CartRedisRepositoryImpl implements CartRedisRepository{
         try {
             String jsonObject = objectMapper.writeValueAsString(item);
             jedis.sadd(key, jsonObject);
-            System.out.println(jsonObject);
 
         } catch (JsonProcessingException e) {
             e.printStackTrace();
