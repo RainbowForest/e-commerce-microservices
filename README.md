@@ -1,7 +1,6 @@
 # REST Microservices architecture for E-commerce
 
 > Implementation of a REST Microservices in an E-Commerce with Spring boot, Cloud and multiple modules.                
-(author : Kamil Lesniakowski PL)
 
 ### Table of contents
 
