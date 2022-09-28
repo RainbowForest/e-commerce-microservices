@@ -53,6 +53,3 @@
 
 **Application status :** BETA 
 
-### Contact:
-
-Email : RainbowForestGit@gmail.com
